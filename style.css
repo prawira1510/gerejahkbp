@@ -278,6 +278,80 @@ body {
     border-top: 1px solid #eee;
 }
 
+/* ==================== LEADER CARD (PEMIMPIN GEREJA) ==================== */
+.leader-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--soft-shadow);
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.leader-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px -12px rgba(178, 34, 28, 0.25);
+}
+
+.leader-img {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.leader-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.leader-card:hover .leader-img img {
+    transform: scale(1.05);
+}
+
+.leader-info {
+    padding: 20px;
+    background: white;
+}
+
+.leader-info h4, .leader-info h5 {
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.leader-info .text-hkbp {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--hkbp-red);
+}
+
+.leader-info .social-links {
+    margin-top: 12px;
+}
+
+.leader-info .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #fff0ee;
+    border-radius: 50%;
+    color: var(--hkbp-red);
+    margin: 0 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.leader-info .social-links a:hover {
+    background: var(--hkbp-red);
+    color: white;
+    transform: translateY(-3px);
+}
+
 /* CTA Section */
 .cta-section {
     background: linear-gradient(135deg, var(--hkbp-red), #8b1a15);
@@ -315,6 +389,7 @@ body {
 
 .footer-bg a {
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .footer-bg a:hover {
@@ -361,6 +436,7 @@ body {
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
 ::-webkit-scrollbar-thumb { background: var(--hkbp-red); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #8b1a15; }
 
 /* Scroll reveal */
 .scroll-reveal {
@@ -378,7 +454,7 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-/* Responsive */
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
     .section-title { font-size: 1.75rem; }
     .hero-section { min-height: 70vh; background-attachment: scroll; }
@@ -391,10 +467,25 @@ body {
     .icon-box i { font-size: 1.5rem; }
     .icon-circle { width: 55px; height: 55px; }
     .icon-circle i { font-size: 1.8rem; }
+    
+    /* Leader Card Responsive */
+    .leader-img { height: 240px; }
+    .leader-info { padding: 15px; }
+    .leader-info h4 { font-size: 1.2rem; }
+    .leader-info h5 { font-size: 1rem; }
 }
 
 @media (max-width: 576px) {
     .hero-section .display-3 { font-size: 1.6rem; }
     .btn-lg { padding: 10px 20px; font-size: 0.9rem; }
     .slideshow-img img { height: 200px; }
+    
+    /* Leader Card Mobile */
+    .leader-img { height: 220px; }
+    .leader-info h5 { font-size: 0.9rem; }
+    .leader-info .text-hkbp { font-size: 0.75rem; }
+}
+
+@media (min-width: 1200px) {
+    .slideshow-img img { height: 260px; }
 }
